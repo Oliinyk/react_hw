@@ -1,0 +1,19 @@
+.text-holder {
+	border: 1px solid #eee;
+	border-radius: 5px;
+	margin-top: 20px;
+	padding: 15px 25px;
+	border-left-width: 3px;
+}
+.text-holder.default {
+	border-left-color: #007bff;
+}
+.text-holder.error {
+	border-left-color: #dc3545;
+}
+.text-holder.success {
+	border-left-color: #28a745;
+}
+.text-holder .title {
+	margin: 0 0 15px;
+}
