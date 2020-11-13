@@ -2,73 +2,50 @@ import React, { useState } from 'react';
 import './Card.css';
 
 const Card = ({ name, username, email, address, phone, website, company, id, removeElement, currentIndex }) => {
-  const [isSelected, setToggle] = useState(false);
+	const [isSelected, setToggle] = useState(false);
 
-  const handler = (e) => {
-    e.preventDefault();
-    e.stopPropagation();
+	// const address_body = Object.keys(address).map(item => <div key={item} ><p>{item}: { address[item] }</p></div>);
 
-    setToggle(!isSelected)
-  }
+	const handler = (e) => {
+		e.preventDefault();
+		e.stopPropagation();
 
-  const cardClass = isSelected ? 'Card isSelected' : 'Card';
+		setToggle(!isSelected)
+	}
 
-  return (
-    <div className={cardClass}>
-      
-      <span className="Card_subTitle">id is: { id }</span>
+	const cardClass = isSelected ? 'Card isSelected' : 'Card';
 
-      <p className="Card_name">{ name }</p>
-      <p className="Card_username">{ username }</p>
-      <p className="Card_email">{ email }</p>
+	return (
+		<div className={cardClass} onClick={(e) => handler(e)}>
+			
+			<p className="Card_subTitle">id: { id }</p>
 
-      <h3> address: </h3>
-      {/* <p className="Card_address">{ address }</p> */}
-      <p className="Card_street">{ address.street }</p>
-      <p className="Card_suite">{ address.suite }</p>
-      <p className="Card_city">{ address.city }</p>
-      <p className="Card_zipcode">{ address.zipcode }</p>
+			<div className="Card_name"><p>name: { name }</p></div>
+			<div className="Card_username"><p>username: { username }</p></div>
+			<div className="Card_email"><p>email: { email }</p></div>
 
-      <p className="Card_phone">{ phone }</p>
-      <p className="Card_website">{ website }</p>
-      {/* <p className="Card_company">{ company }</p> */}
+			<div className="Card_phone"><p>phone: { phone }</p></div>
+			<div className="Card_website"><p>website: { website }</p></div>
 
-      <button onClick={(e) => handler(e)}>Select me!</button>
-      <button onClick={() => removeElement(currentIndex)}>Remove me!</button>
-    </div>
-  )
+			<div className="divider"></div>
+			<h3 className="Card_title"> address: </h3>
+			<div className="Card_street"><p>street: { address.street }</p></div>
+			<div className="Card_suite"><p>suite: { address.suite }</p></div>
+			<div className="Card_city"><p>city: { address.city }</p></div>
+			<div className="Card_zipcode"><p>zipcode: { address.zipcode }</p></div>
+			{/* {address_body} */}
+
+			<div className="divider"></div>
+			<h3 className="Card_title"> company: </h3>
+			<div className="Card_company"><p>{ company.name }</p></div>
+			<div className="Card_company"><p>{ company.catchPhrase }</p></div>
+			<div className="Card_company"><p>{ company.bs }</p></div>
+
+			<div className="Card_footer">
+				<button className="btn btn-error" onClick={() => removeElement(currentIndex)}>Delete</button>
+			</div>
+		</div>
+	)
 };
-
-
-// class Card extends Component {
-//   constructor(props) {
-//     super(props);
-//
-//     this.state = {
-//       isSelected: false
-//     }
-//   }
-//
-//   onStateChange() {
-//     this.setState({ isSelected: !this.state.isSelected })
-//   }
-//
-//   render() {
-//
-//     const { albumId, id, title, url } = this.props;
-//     const { isSelected } = this.state;
-//     const cardClass = isSelected ? 'Card isSelected' : 'Card';
-//
-//     return (
-//       <div className={cardClass}>
-//         <span>Album N: { albumId }</span>
-//         <span className="Card_subTitle">My id is: { id }</span>
-//         <h1 className="Card_title">{title}</h1>
-//         <img className="Card_image" src={url} alt={title} />
-//         <button onClick={() => this.onStateChange()}>Select me!</button>
-//       </div>
-//     );
-//   }
-// }
 
 export default Card;

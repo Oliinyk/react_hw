@@ -1,17 +1,12 @@
 import React from 'react';
 import './App.css';
-
 import CardsWrapper from "./components/CardsWrapper/CardsWrapper";
+import { users } from './components/users';
 
-class App extends React.Component {
-
-  render() {
-    return(
-      <React.Fragment>
-        <CardsWrapper />
-      </React.Fragment>
-    )
-  }
+function App() {
+	return (
+		<CardsWrapper users={users} />
+	)
 }
 
 export default App;

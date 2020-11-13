@@ -1,0 +1,85 @@
+.modal {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+.modal-dialog {
+	width: 500px;
+	background: #fff;
+	border: 1px solid rgba(0,0,0,.2);
+	border-radius: 5px;
+	transition: .5s ease-out;
+	box-shadow: -2rem 2rem 2rem rgba(0, 0, 0, 0.2);
+	filter: blur(0);
+	transform: scale(1);
+	opacity: 1;
+	visibility: visible;
+	z-index: 1050;
+	margin: 100px auto;
+	max-width: 500px;
+	position: relative;
+}
+.modal.off {
+	opacity: 0;
+	visibility: hidden;
+	filter: blur(8px);
+	transform: scale(0.33);
+	box-shadow: 1rem 0 0 rgba(0, 0, 0, 0.2);
+}
+.modal h3 {
+	padding: 10px;
+	margin: 0;
+	font-size: 18px;
+}
+.modal .content {
+	padding: 10px 30px 30px;
+	text-align: left;
+}
+.modal .form-group {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	margin-bottom: 15px;
+}
+.modal label {
+	flex: 0 0 30%;
+	max-width: 30%;
+	font-size: 14px;
+}
+.modal .form-control {
+	flex: 0 0 70%;
+	max-width: 70%;
+	display: block;
+	width: 100%;
+	padding: 6px 12px;
+	font-size: 14px;
+	line-height: 1.5;
+	color: #495057;
+	background-color: #fff;
+	background-clip: padding-box;
+	border: 1px solid #ced4da;
+	border-radius: 4px;
+	transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.modal .actions {
+	border-top: 1px solid #ccc;
+	padding: 10px;
+}
+.modal-backdrop {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 1040;
+	background-color: #000;
+	opacity: .5;
+}
+.modal .btn {
+	min-width: 100px;
+}
+.modal .btn + .btn {
+	margin: 0 0 0 15px;
+}

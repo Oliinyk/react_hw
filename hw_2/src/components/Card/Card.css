@@ -1,13 +1,39 @@
 .Card {
-  border: 1px solid;
-  padding: 10px;
-  box-sizing: border-box;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+	border: 1px solid #d5d5d5;
+	border-radius: 5px;
+	padding: 10px;
+	box-sizing: border-box;
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+	width: calc(25% - 30px);
+	margin: 0 15px 30px;
 }
-
 .Card.isSelected {
-  background-color: aliceblue;
+	background-color: aliceblue;
+}
+.Card_title {
+	margin: 0;
+	font-size: 16px;
+	font-weight: 500;
+	margin: 5px 0 3px;
+}
+.Card p {
+	margin: 0;
+	font-size: 14px;
+}
+.divider {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 1px;
+	background-color: #d5d5d5;
+	margin: 10px 0 0;
+}
+.Card_footer {
+	margin: 15px 0 0;
+    text-align: center;
+}
+.Card_footer .btn {
+	width: 100%;
 }
