@@ -37,3 +37,18 @@
 .Card_footer .btn {
 	width: 100%;
 }
+@media (max-width: 991px) {
+	.Card {
+		width: calc(33.33% - 30px);
+	}
+}
+@media (max-width: 767px) {
+	.Card {
+		width: calc(50% - 30px);
+	}
+}
+@media (max-width: 480px) {
+	.Card {
+		width: 100%;
+	}
+}

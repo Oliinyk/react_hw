@@ -24,17 +24,17 @@ class CardsWrapper extends React.Component {
 		const cards = this.state.cardItems;
 		const newCard = [
 			{
-				"id": Math.floor(Math.random()*100),
-				"name": data.name,
-				"username": data.username,
-				"email": data.email,
+				"id": Math.floor(Math.random()*999),
+				"name": data.nameInput,
+				"username": data.usernameInput,
+				"email": data.emailInput,
 				"address": {
 				  "street": "-",
 				  "suite": "-",
 				  "city": "-",
 				  "zipcode": "-"
 				},
-				"phone": data.phone,
+				"phone": data.phoneInput,
 				"website": "-",
 				"company": {
 				  "name": "-",

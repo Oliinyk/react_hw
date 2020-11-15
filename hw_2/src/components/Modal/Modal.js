@@ -6,6 +6,14 @@ export default class Modal extends React.Component {
 	constructor(props) {
 		super(props);
 		this.handleSubmit = this.handleSubmit.bind(this);
+
+		this.nameInput = React.createRef();
+		this.usernameInput = React.createRef();
+		this.emailInput = React.createRef();
+		this.phoneInput = React.createRef();
+		this.state = {
+			value: ''
+		}
 	}
 
 	onClose = e => {
@@ -14,12 +22,22 @@ export default class Modal extends React.Component {
 
 	handleSubmit(e) {
 		e.preventDefault();
-		const formData = {};
-		for (const field in this.refs) {
-			formData[field] = this.refs[field].value;
-		}
-		this.props.addCard(formData);
 		
+		const nameInput = this.nameInput.current.value;
+		const usernameInput = this.usernameInput.current.value;
+		const emailInput = this.emailInput.current.value;
+		const phoneInput = this.phoneInput.current.value;
+		// console.log('-> ', nameInput);
+		// console.log('-> ', usernameInput);
+
+		const formData = {
+			nameInput,
+			usernameInput,
+			emailInput,
+			phoneInput
+		};
+		this.props.addCard(formData);
+
 		this.onClose();
 	}
 
@@ -36,19 +54,43 @@ export default class Modal extends React.Component {
 						<div className="content">
 							<div className="form-group">
 								<label htmlFor="fieldName">Name</label>
-								<input type="text" className="form-control" id="fieldName" placeholder="Enter name" ref="name" />
+								<input 
+									type="text" 
+									className="form-control" 
+									id="fieldName" 
+									placeholder="Enter name"
+									ref={this.nameInput}
+								/>
 							</div>
 							<div className="form-group">
 								<label htmlFor="fieldUsername">Username</label>
-								<input type="text" className="form-control" id="fieldUsername" placeholder="Enter username" ref="username" />
+								<input 
+									type="text" 
+									className="form-control" 
+									id="fieldUsername" 
+									placeholder="Enter username"
+									ref={this.usernameInput}
+								/>
 							</div>
 							<div className="form-group">
 								<label htmlFor="fieldEmail">Email address</label>
-								<input type="email" className="form-control" id="fieldEmail" placeholder="Enter email" ref="email" />
+								<input 
+									type="email" 
+									className="form-control" 
+									id="fieldEmail" 
+									placeholder="Enter email"
+									ref={this.emailInput}
+								/>
 							</div>
 							<div className="form-group">
 								<label htmlFor="fieldPhone">Phone</label>
-								<input type="text" className="form-control" id="fieldPhone" placeholder="Enter phone" ref="phone" />
+								<input 
+									type="text" 
+									className="form-control" 
+									id="fieldPhone" 
+									placeholder="Enter phone"
+									ref={this.phoneInput}
+								/>
 							</div>
 						</div>
 						<div className="actions">
