@@ -1,3 +1,4 @@
+// import React, { useState } from "react";
 import React from "react";
 import PropTypes from "prop-types";
 import './Modal.css';
@@ -22,14 +23,24 @@ export default class Modal extends React.Component {
 
 	handleSubmit(e) {
 		e.preventDefault();
+		// первый вариант => и нужно в каждый input написать ref='nameInput' ref='usernameInput' ref='emailInput' ref='phoneInput'
+		// const formData = {};
+		// for (const field in this.refs) {
+		// 	formData[field] = this.refs[field].value;
+		// }
+		// this.props.addCard(formData);
+
+		// console.log('-> ', formData);
 		
+
 		const nameInput = this.nameInput.current.value;
 		const usernameInput = this.usernameInput.current.value;
 		const emailInput = this.emailInput.current.value;
 		const phoneInput = this.phoneInput.current.value;
 		// console.log('-> ', nameInput);
 		// console.log('-> ', usernameInput);
-
+		// console.log('-> ', emailInput);
+		// console.log('-> ', phoneInput);
 		const formData = {
 			nameInput,
 			usernameInput,

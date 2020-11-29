@@ -1,0 +1,41 @@
+.Post {
+	border: 1px solid #d5d5d5;
+	border-radius: 5px;
+	padding: 15px;
+	box-sizing: border-box;
+	width: 100%;
+	margin: 0 0 30px;
+	position: relative;
+}
+.Post p {
+	margin: 0;
+	font-size: 15px;
+}
+.PostId {
+	position: absolute;
+	top: -15px;
+    left: -15px;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+	justify-content: center;
+	background-color: #fd2d4f;
+    border: 1px solid #c80021;
+    color: #fff;
+    font-weight: 500;
+	font-size: 14px;
+	margin: 0;
+}
+.UserId p {
+	font-size: 15px;
+	font-weight: 700;
+}
+.PostTitle {
+	margin-bottom: 10px;
+}
+.PostTitle p { 
+	font-size: 15px;
+	font-weight: 500;
+}
