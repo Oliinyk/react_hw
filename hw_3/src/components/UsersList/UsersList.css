@@ -17,19 +17,19 @@
 }
 .CardId {
 	position: absolute;
-    top: 7px;
-    left: 10px;
-    height: 35px;
-    width: 35px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #007bff;
-    color: #fff;
-    font-weight: 500;
-    font-size: 16px;
-    margin: 0;
+	top: 7px;
+	left: 10px;
+	height: 35px;
+	width: 35px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #007bff;
+	color: #fff;
+	font-weight: 500;
+	font-size: 16px;
+	margin: 0;
 }
 .CardName {
 	text-align: right;
@@ -50,15 +50,15 @@
 .CardLink {
 	background-color: #007bff;
 	border: 1px solid #007bff;
-    padding: 7px 10px;
-    color: #fff;
-    line-height: 1;
-    display: block;
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 500;
-    border-radius: 15px;
-    text-align: center;
+	padding: 7px 10px;
+	color: #fff;
+	line-height: 1;
+	display: block;
+	text-decoration: none;
+	font-size: 14px;
+	font-weight: 500;
+	border-radius: 15px;
+	text-align: center;
 	margin: 15px 0 5px;
 	transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }

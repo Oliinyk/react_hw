@@ -15,16 +15,16 @@
 }
 .UserNumber {
 	height: 30px;
-    width: 30px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
+	width: 30px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
 	justify-content: center;
 	background-color: #fd2d4f;
 	margin: 0 10px 0 0;
 }
 .PostId {
-    font-size: 15px;
+	font-size: 15px;
 	font-weight: 700;
 }
 .UserId {
@@ -48,15 +48,15 @@
 .PostLink {
 	background-color: #007bff;
 	border: 1px solid #007bff;
-    padding: 10px 20px;
-    color: #fff;
-    line-height: 1;
-    display: block;
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 500;
-    border-radius: 25px;
-    text-align: center;
+	padding: 10px 20px;
+	color: #fff;
+	line-height: 1;
+	display: block;
+	text-decoration: none;
+	font-size: 14px;
+	font-weight: 500;
+	border-radius: 25px;
+	text-align: center;
 	margin: 0 0 25px;
 	transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
