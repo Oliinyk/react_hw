@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import { Link} from "react-router-dom";
 import loader from '../../loader.gif';
-import './Users.css';
+import './UsersList.css';
+import User from "../User/User";
+import PropTypes from 'prop-types';
 
-class Users extends Component {
+class UsersList extends Component {
 	constructor(props){
 		super(props);
 
@@ -42,17 +43,9 @@ class Users extends Component {
 						{
 							!isLoading && (
 								<>
-									{this.state.data.map(d => 
-										<div className="Card" key={d.id}>
-											<h3 className="CardId">{d.id}</h3>
-											<div className="CardName"><h5>{d.name}</h5></div>
-											<div className="divider"></div>
-											<div><p>username: {d.username}</p></div>
-											<div><p>email: { d.email }</p></div>
-											<div><p>phone: { d.phone }</p></div>
-											<Link className="CardLink" to={`/user/${d.id}`}></Link>
-										</div>
-									)}
+									{this.state.data.map((props) => (
+										<User { ...props } key={props.id} />
+									))}
 								</>
 							)
 						}
@@ -61,7 +54,10 @@ class Users extends Component {
 			</>
 		)
 	}
-
 }
 
-export default Users;
+UsersList.propTypes = {
+	match: PropTypes.object
+};
+
+export default UsersList;

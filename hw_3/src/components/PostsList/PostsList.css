@@ -1,0 +1,65 @@
+
+.Post {
+	box-sizing: border-box;
+	width: 100%;
+	position: relative;
+	margin: 0 0 20px;
+}
+.PostInner {
+	padding: 15px;
+	border: 1px solid #d5d5d5;
+}
+.Post p {
+	margin: 0;
+	font-size: 15px;
+}
+.UserNumber {
+	height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+	justify-content: center;
+	background-color: #fd2d4f;
+	margin: 0 10px 0 0;
+}
+.PostId {
+    font-size: 15px;
+	font-weight: 700;
+}
+.UserId {
+	background-color: #007bff;
+	padding: 10px;
+	color: #fff;
+}
+.UserId p {
+	font-size: 15px;
+	font-weight: 700;
+	display: flex;
+	align-items: center;
+}
+.PostTitle {
+	margin-bottom: 10px;
+}
+.PostTitle p { 
+	font-size: 15px;
+	font-weight: 500;
+}
+.PostLink {
+	background-color: #007bff;
+	border: 1px solid #007bff;
+    padding: 10px 20px;
+    color: #fff;
+    line-height: 1;
+    display: block;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 25px;
+    text-align: center;
+	margin: 0 0 25px;
+	transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.PostLink:hover {
+	background-color: #0069d9;
+}
