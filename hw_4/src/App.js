@@ -6,14 +6,12 @@ import {
 	Route
 } from "react-router-dom";
 
-class App extends React.Component {
-	render() {
-		return(
-			<Router>
-				<Route component={UserWrapper} />
-			</Router>
-		)
-	}
+function App() {
+	return (
+		<Router>
+			<Route component={UserWrapper} />
+		</Router>
+	)
 }
 
 export default App;

@@ -29,32 +29,50 @@ class PostsList extends Component {
 		fetch(`https://jsonplaceholder.typicode.com/posts?userId=${match.params.userId}`)
 		.then((response) => response.json())
 		.then(this.setPostData)
-		.then(() => this.setState({ isLoading: !isLoading }))
+		.then(
+			() => {
+				this.setState({ isLoading: !isLoading })
+			},
+			(error) => {
+				this.setState({
+					isLoading: !isLoading,
+					error
+				});
+			}
+		)
 	}
 
 	render() {
-		const { isLoading } = this.state;
+		const { error, isLoading } = this.state;
 
-        return (
-			<>
-				{isLoading && <div className="loading"><img src={loader} className="loader" alt="loader" /></div>}
-
+		if (error) {
+			return (
 				<div className="container">
-					<div className="main">
-						{
-							!isLoading && (
-								<>
-									<Link className="PostLink" to='/' key='link'> Back  </Link>
-									{this.state.data.map((props) => (
-										<Post { ...props } key={props.id} />
-									))}
-								</>
-							)
-						}
-					</div>
+					<div className="ErrorMessage">Error: Post list - {error.message}</div>
 				</div>
-			</>
-        )
+			)
+		} else {
+			return (
+				<>
+					{isLoading && <div className="loading"><img src={loader} className="loader" alt="loader" /></div>}
+
+					<div className="container">
+						<div className="main">
+							{
+								!isLoading && (
+									<>
+										<Link className="PostLink" to='/' key='link'> Back  </Link>
+										{this.state.data.map((props) => (
+											<Post { ...props } key={props.id} />
+										))}
+									</>
+								)
+							}
+						</div>
+					</div>
+				</>
+			)
+		}
 	}
 }
 

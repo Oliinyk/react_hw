@@ -28,31 +28,49 @@ class UsersList extends Component {
 		fetch('https://jsonplaceholder.typicode.com/users')
 		.then((response) => response.json())
 		.then(this.setUserData)
-		.then(() => this.setState({ isLoading: !isLoading }))
+		.then(
+			() => {
+				this.setState({ isLoading: !isLoading })
+			},
+			(error) => {
+				this.setState({
+					isLoading: !isLoading,
+					error
+				});
+			}
+		)
 	}
 
 	render() {
-		const { isLoading } = this.state;
+		const { error, isLoading } = this.state;
 
-		return (
-			<>
-				{isLoading && <div className="loading"><img src={loader} className="loader" alt="loader" /></div>}
-
+		if (error) {
+			return (
 				<div className="container">
-					<div className="main">
-						{
-							!isLoading && (
-								<>
-									{this.state.data.map((props) => (
-										<User { ...props } key={props.id} />
-									))}
-								</>
-							)
-						}
-					</div>
+					<div className="ErrorMessage">Error: User List - {error.message}</div>
 				</div>
-			</>
-		)
+			)
+		} else {
+			return (
+				<>
+					{isLoading && <div className="loading"><img src={loader} className="loader" alt="loader" /></div>}
+	
+					<div className="container">
+						<div className="main">
+							{
+								!isLoading && (
+									<>
+										{this.state.data.map((props) => (
+											<User { ...props } key={props.id} />
+										))}
+									</>
+								)
+							}
+						</div>
+					</div>
+				</>
+			)
+		}
 	}
 }
 
