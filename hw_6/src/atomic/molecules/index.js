@@ -1,0 +1,1 @@
+export { default as Hotel } from './Hotel/Hotel.js';

@@ -21,7 +21,7 @@ const Map = withScriptjs(withGoogleMap((props) => {
 
 	return (
 		<GoogleMap
-			defaultZoom={8}
+			defaultZoom={11}
 			defaultCenter={ defaultCenter }
 			>
 			{
